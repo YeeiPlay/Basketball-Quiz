@@ -8,6 +8,9 @@
         <title>Basketball Quiz App</title>
         
         <!-- Google fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
@@ -19,7 +22,7 @@
                 <span class="site-heading-lower"></span>
                 <br>
                 <br>
-                <span class="site-heading-upper text-primary mb-3">Basketball Quiz App</span>
+                <span class="site-heading-upper text-primary mb-3">Basketball Quiz APP</span>
             </h1>
         </header>
         
@@ -30,28 +33,37 @@
                         <div class="row">
                             <div class="col-xl-9 mx-auto">
                                 <div class="cta-inner bg-faded text-center rounded">
-                                    <h2 class="section-heading mb-3">
-                                        <span class="section-heading-upper">Basketball Facts <br>
-                                            <br> <small> you Did Not know! </small></span>
+                                   <container id="factsElm-two">
+                                     <h2 class="section-heading">
+                                        <span class="section-heading-upper"><span class="mb-0">Basketball Facts </span> <br>
+                                            <br> <small class="mb-0"> you Did Not know! </small></span>
                                     </h2>
+                                    
                                     <p class="mb-0">Basketball has a long history dating back to 1891 when rules were much different than they are today.
                                         <br> Take the Quiz bellow: 
                                     </p>
+                                    </container>
+                                    <h3 id="factsElm" class="hide">Thanks for Playing </h3>
                                     <main id="main">
                                         <br><br>
                                         <h3 id="question"></h3>
                                         <br>
                                         <br>
-                                        <button class="btn btn-primary btn-xl" id="btn-false" data-boolean="false">False</button>
-                                        <button class="btn btn-primary btn-xl" id="btn-true" data-boolean="true">True</button>
+                                        <button class="btn btn-danger btn-xl" id="btn-false" data-boolean="false">False</button>
+                                        <button class="btn btn-success btn-xl" id="btn-true" data-boolean="true">True</button>
                                     </main>
                                     <br><br>
-                                    <header class="section-heading mb-5">
-                                        <p> Wrong: ❌ <span id="wrong"></span></p>
-                                        <p> Correct: ✔️ <span id="correct"></span></p>
-                                    </header>
+                                    <header id="color_answers" class="section-heading mb-4">
+                                        <div class="wrong">
+                                        <p id="wrong1"> Wrong: ❌ <span id="wrong"></span></p>
+                                        </div>
+                                        <div class="correct">
+                                            <p id="wrong1"> Correct: ✔️ <span id="correct"></span></p>
+                                            </div>
+                                        </header>
                                     <div id="game-over" class="hide">
                                         <h1>Game Over</h1>
+                                        <button class="btn btn-success btn-m" id="btnRestart">Play Again?</button>
                                         <h5><span> Your Score:</span></h5>
                                         <p id="score"></p>
                                     </div>

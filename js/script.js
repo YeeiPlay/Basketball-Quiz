@@ -6,6 +6,9 @@ const wrongElm = document.getElementById("wrong");
 const gameOver = document.getElementById("game-over");
 const mainElm = document.getElementById("main");
 const score = document.getElementById("score");
+const btnRestart = document.getElementById("btnRestart");
+const factsElm = document.getElementById("factsElm");
+const factsElmtwo = document.getElementById("factsElm-two");
 
 const questions = [
   {
@@ -17,7 +20,7 @@ const questions = [
     answer: true
   },
   {
-    question: "Kissing or having a sexual relationship with an opponent was never allowed. However, such offenses were never considered fouls until 1969",  
+    question: "any type of relationship with an opponent was never allowed. However, such offenses were never considered fouls until 1969",  
     answer: false
   },
   {
@@ -82,20 +85,37 @@ let wrongCount = 0;
 let correctCount = 0;
 let finished = false;
 
+//this will render / post (print) Quiz questions to the DOME
 const renderQuestion = () => {
   questionsElm.textContent = questions[currentIndex].question
 };
-
+//this will render the Score
 const renderScores = () => {
   wrongElm.textContent = wrongCount;
   correctElm.textContent = correctCount;
 };
 
-const renderGameover = ()=> {
-mainElm.classList.add("hide")
-gameOver.classList.remove("hide")
-score.textContent = ((correctCount / questions.length) * 100).toFixed(2) + "%"; 
+const restartGame = ()=> {
+  currentIndex = 0;
+  wrongCount = 0;
+  correctCount = 0;
+  finished = false;
+  mainElm.classList.remove("hide")
+  gameOver.classList.add("hide")
+  factsElm.classList.add("hide")
+  factsElmtwo.classList.remove("hide")
+  renderQuestion();
+  renderScores();
+}
 
+const renderGameover = ()=> {
+  mainElm.classList.add("hide");
+  gameOver.classList.remove("hide");
+  factsElmtwo.classList.add("hide");
+  factsElm.classList.remove("hide");
+  
+  score.textContent = ((correctCount / questions.length) * 100).toFixed(2) + "%"; 
+  
 }
 
 const gameLogic = (event) => {
@@ -125,6 +145,7 @@ renderScores();
 
 btnTrue.addEventListener("click", gameLogic);
 btnFalse.addEventListener("click", gameLogic);
+btnRestart.addEventListener("click", restartGame);
 
 renderScores();
 renderQuestion();

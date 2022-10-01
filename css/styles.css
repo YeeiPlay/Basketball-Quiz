@@ -10,7 +10,7 @@
   --bs-green: #198754;
   --bs-teal: #20c997;
   --bs-cyan: #0dcaf0;
-  --bs-white: #fff;
+  --bs-white: rgba(0, 0, 0, 0.575);
   --bs-gray: #6c757d;
   --bs-gray-dark: #343a40;
   --bs-gray-100: #f8f9fa;
@@ -22,7 +22,7 @@
   --bs-gray-700: #495057;
   --bs-gray-800: #343a40;
   --bs-gray-900: #212529;
-  --bs-primary: #000000;
+  --bs-primary: #dddada;
   --bs-secondary: #2F170F;
   --bs-success: #198754;
   --bs-info: #0dcaf0;
@@ -62,13 +62,25 @@
 
 body {
   margin: 0;
-  font-family: var(--bs-body-font-family);
+  font-family: 'Roboto', sans-serif;
   font-size: var(--bs-body-font-size);
   font-weight: var(--bs-body-font-weight);
   line-height: var(--bs-body-line-height);
   text-align: var(--bs-body-text-align);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+h1, h3 {
+  color: #d5d5d5;
+}
+
+#color_answers {
+  color: white;
+}
+
+.mb-0 {
+  color: rgb(201, 201, 201)
 }
 
 .section-heading {
@@ -86,6 +98,56 @@ hr {
   background-color: currentColor;
   border: 0;
   opacity: 0.25;
+}
+
+.btn_false{
+background-color: #0d6efd;
+}
+
+.correct {
+  padding-top: 15px;
+  background-color: rgba(0, 0, 0, 0.766);
+  width: 150px;
+  height: 55px;
+  margin-top: 20px;
+  border-radius: 20px;
+  border-style: hidden;
+  box-shadow: 0 9px 8px 0 rgba(255, 255, 255, 0.048),
+  0 6px 20px 0 rgba(246, 246, 246, 0.103);
+}
+
+.wrong {
+  padding-top: 15px;
+  background-color: rgba(0, 0, 0, 0.766);
+  width: 150px;
+  height: 55px;
+  margin-top: 20px;
+  border-radius: 20px;
+  border-style: hidden;
+  box-shadow: 0 9px 8px 0 rgba(255, 255, 255, 0.048),
+  0 6px 20px 0 rgba(246, 246, 246, 0.103);
+}
+
+#game-over {
+  background-color: #2579f8;
+  color: rgb(235, 235, 235);
+  padding-top: 15px;
+  padding-bottom: 10px;
+  background-color: rgba(0, 0, 0, 0.766);
+  border-radius: 20px;
+  border-style: hidden;
+  box-shadow: 0 9px 8px 0 rgba(255, 255, 255, 0.048),
+  0 6px 20px 0 rgba(246, 246, 246, 0.103);
+}
+
+#question {
+  background-color: #1f032530;
+  border-radius: 2%;
+  padding: 10px;
+}
+
+#btnRestart {
+  margin-bottom: 10px;
 }
 
 hr:not([size]) {
@@ -2745,8 +2807,10 @@ textarea.form-control-lg {
 }
 
 .btn-primary {
+  margin-left: 20px;
+  margin-right: 20px;
   color: #000;
-  background-color: #ffffff;
+  background-color: #e7e7e7;
   border-color: #e6a756;
 }
 .btn-primary:hover {
@@ -11055,7 +11119,7 @@ p {
 }
 
 .bg-faded {
-  background-color: #f6e1c5;
+  background-color: var(--bs-white)
 }
 
 .btn-xl {
