@@ -228,12 +228,6 @@ h2 {
     position: relative;
     overflow: hidden;
   }
-  .lightsNav{
-    position: relative;
-    padding: 10px;
-    text-align: center;
-    padding-top: 35px;
-  }
   
   .lightsNav label{
     display: inline-block;
@@ -243,16 +237,6 @@ h2 {
     cursor: pointer;
   }
   
-  .lightsNav label + label{
-    margin-left: 40px; 
-  }
-  .carNav{
-    position: relative;
-    padding: 10px;
-    padding-top: 40px;
-    text-align: center;
-  }
-  
   .carNav label{
     display: inline-block;
     width: 25px; 
@@ -260,10 +244,5 @@ h2 {
     border-radius: 80%;
     cursor: pointer;
   }
-  
-  .carNav label + label{
-    margin-left: 40px; 
-  }
-  
   
 }
